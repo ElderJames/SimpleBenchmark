@@ -44,8 +44,8 @@ namespace MyBenchmarks
 }
 ```
 3. `Benchmark`名称和执行次数  
-[BenchmarkAttribute](https://github.com/liuhaoyang/SimpleBenchmark/blob/master/src/SimpleBenchmark.Core/BenchmarkAttribute.cs)接受`Name`和`Iteration`参数来指定测试的名称和执行次数。下面的代码演示了指定测试名称为`Md5 Benchmark`并执行`1000000`次。
-```cs
-[Benchmark("Md5 Benchmark",1000000)]
-public byte[] Md5() => md5.ComputeHash(data);
-```
+  [BenchmarkAttribute](https://github.com/liuhaoyang/SimpleBenchmark/blob/master/src/SimpleBenchmark.Core/BenchmarkAttribute.cs)接受`Name`和`Iteration`参数来指定测试的名称和执行次数。下面的代码演示了指定测试名称为`Md5 Benchmark`并执行`1000000`次。  
+  ```cs
+   [Benchmark("Md5 Benchmark",1000000)]
+   public byte[] Md5() => md5.ComputeHash(data);
+  ```
