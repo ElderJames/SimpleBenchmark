@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Lemon</authors>
+    <owners>Lemon</owners>
+    <projectUrl>https://github.com/liuhaoyang/SimpleBenchmark</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Simple .NET library for benchmarking.</releaseNotes>
+    <tags>Benchmark</tags>
+  </metadata>
+</package>
