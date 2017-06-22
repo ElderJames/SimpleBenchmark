@@ -20,6 +20,7 @@ namespace SimpleBenchmark.Core.Test
 
     public class ConcurrentBenchmark
     {
+        private static int index = 0;
         [Concurrent(4)]
         [Benchmark(Iteration = 100000)]
         public void Concurrent()
@@ -29,6 +30,7 @@ namespace SimpleBenchmark.Core.Test
             {
                 sum += i;
             }
+            //System.Threading.Interlocked.Increment(ref index);
         }
 
         [Benchmark(Iteration = 100000)]
@@ -39,6 +41,26 @@ namespace SimpleBenchmark.Core.Test
             {
                 sum += i;
             }
+        }
+
+        [Concurrent(100)]
+        [Benchmark(Iteration = 100000)]
+        public Task AsyncTest()
+        {
+            System.Threading.Interlocked.Increment(ref index);
+            return Task.FromResult(0);
+        }
+
+        [Setup]
+        public void Setup()
+        {
+            Assert.AreEqual(0, index);
+        }
+
+        [Cleanup]
+        public void Cleanup()
+        {
+            Assert.AreEqual(100000, index);
         }
     }
 }

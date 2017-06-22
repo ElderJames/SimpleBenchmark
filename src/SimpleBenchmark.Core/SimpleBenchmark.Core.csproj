@@ -62,9 +62,11 @@
     <Compile Include="BenchmarkInvokers\ParallelBenchmarkInvoker.cs" />
     <Compile Include="BenchmarkIteration.cs" />
     <Compile Include="BenchmarkRunner.cs" />
+    <Compile Include="CleanupAttribute.cs" />
     <Compile Include="ParallelAttribute.cs" />
     <Compile Include="Schedulers\LimitedConcurrencyLevelTaskScheduler.cs" />
     <Compile Include="Schedulers\QueuedTaskScheduler.cs" />
+    <Compile Include="SetupAttribute.cs" />
     <Compile Include="Times\CodeTimer.cs" />
     <Compile Include="ConcurrentAttribute.cs" />
     <Compile Include="BenchmarkInvokers\ConcurrentBenchmarkInvoker.cs" />
