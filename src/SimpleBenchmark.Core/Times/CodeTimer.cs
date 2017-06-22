@@ -128,6 +128,11 @@ namespace SimpleBenchmark.Core
                 return;
             var taskScheduler = new LimitedConcurrencyLevelTaskScheduler(iterationOfConcurrent);
             var taskFactory = new TaskFactory(taskScheduler);
+            var tasks = new Task[iteration];
+            for (var i = 0; i < iteration; i++)
+            {
+                tasks[i] = new Task(action);
+            }
             ConsoleColor foregroundColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(name);
@@ -137,14 +142,12 @@ namespace SimpleBenchmark.Core
                 numArray[generation] = GC.CollectionCount(generation);
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            ulong cycleCount = CodeTimer.GetCycleCount();        
-            var tasks = new Task[iteration];
+            ulong cycleCount = CodeTimer.GetCycleCount();
             for (var i = 0; i < iteration; i++)
             {
-                tasks[i] = taskFactory.StartNew(action);
+                tasks[i].Start(taskScheduler);
             }
             Task.WaitAll(tasks);
-            stopwatch.Stop();
             ulong num1 = CodeTimer.GetCycleCount() - cycleCount;
             stopwatch.Stop();
             Console.ForegroundColor = foregroundColor;
@@ -163,7 +166,11 @@ namespace SimpleBenchmark.Core
             if (string.IsNullOrEmpty(name))
                 return;
             var taskScheduler = new LimitedConcurrencyLevelTaskScheduler(iterationOfConcurrent);
-            var taskFactory = new TaskFactory(taskScheduler);
+            var tasks = new Task[iteration];
+            for (var i = 0; i < iteration; i++)
+            {
+                tasks[i] = new Task<Task>(action);
+            }
             ConsoleColor foregroundColor = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(name);
@@ -173,14 +180,12 @@ namespace SimpleBenchmark.Core
                 numArray[generation] = GC.CollectionCount(generation);
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            ulong cycleCount = CodeTimer.GetCycleCount();  
-            var tasks = new Task[iteration];
+            ulong cycleCount = CodeTimer.GetCycleCount();
             for (var i = 0; i < iteration; i++)
             {
-                tasks[i] = taskFactory.StartNew(action);
+                tasks[i].Start(taskScheduler);
             }
             Task.WaitAll(tasks);
-            stopwatch.Stop();
             ulong num1 = CodeTimer.GetCycleCount() - cycleCount;
             stopwatch.Stop();
             Console.ForegroundColor = foregroundColor;
