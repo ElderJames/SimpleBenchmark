@@ -18,7 +18,7 @@ namespace SimpleBenchmark.Core
                 throw new ArgumentNullException(nameof(args));
             }
             var benchmarkInstance = Activator.CreateInstance(typeof(T), args);
-            var benchmarkInvokers = typeof(T).GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance).Where(x => x.IsDefined(typeof(BenchmarkAttribute), true)).Select(x => new BenchmarkInvoker(x)).ToArray();
+            var benchmarkInvokers = typeof(T).GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance).Where(x => x.IsDefined(typeof(BenchmarkAttribute), true)).Select(x => BenchmarkInvokerFactory.Create(x)).ToArray();
             if (benchmarkInvokers.Length == 0)
             {
                 Console.WriteLine("Not found benchmark !");

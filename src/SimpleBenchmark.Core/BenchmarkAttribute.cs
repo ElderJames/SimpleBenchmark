@@ -13,12 +13,12 @@ namespace SimpleBenchmark.Core
         public int Iteration { get; set; }
 
         public BenchmarkAttribute()
-            : this(null, 10000)
+            : this(null, BenchmarkIteration.Default)
         {
         }
 
         public BenchmarkAttribute(string name)
-          : this(name, 10000)
+          : this(name, BenchmarkIteration.Default)
         {
         }
 

@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BenchmarkInvokers\AsyncBenchmarkInvoker.cs" />
+    <Compile Include="BenchmarkInvokers\AsyncConcurrentBenchmarkInvoker.cs" />
     <Compile Include="BenchmarkAttribute.cs" />
-    <Compile Include="BenchmarkInvoker.cs" />
+    <Compile Include="BenchmarkInvokers\BenchmarkInvoker.cs" />
+    <Compile Include="BenchmarkInvokers\BenchmarkInvokerFactory.cs" />
+    <Compile Include="BenchmarkInvokers\ParallelBenchmarkInvoker.cs" />
+    <Compile Include="BenchmarkIteration.cs" />
     <Compile Include="BenchmarkRunner.cs" />
-    <Compile Include="CodeTimer.cs" />
+    <Compile Include="ParallelAttribute.cs" />
+    <Compile Include="Schedulers\LimitedConcurrencyLevelTaskScheduler.cs" />
+    <Compile Include="Schedulers\QueuedTaskScheduler.cs" />
+    <Compile Include="Times\CodeTimer.cs" />
+    <Compile Include="ConcurrentAttribute.cs" />
+    <Compile Include="BenchmarkInvokers\ConcurrentBenchmarkInvoker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BenchmarkInvokers\VoidBenchmarkInvoker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
