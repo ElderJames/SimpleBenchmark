@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution item", "solution i
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{2900C844-34BD-4CEC-9E7E-08ABA19DD683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBenchmark.Core.Test", "test\SimpleBenchmark.Core.Test\SimpleBenchmark.Core.Test.csproj", "{ECA81395-3E64-499A-9EC4-4CFA07ABACA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,11 +33,16 @@ Global
 		{6625BADD-624E-489F-92AD-D4F00CC380BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6625BADD-624E-489F-92AD-D4F00CC380BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6625BADD-624E-489F-92AD-D4F00CC380BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECA81395-3E64-499A-9EC4-4CFA07ABACA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECA81395-3E64-499A-9EC4-4CFA07ABACA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECA81395-3E64-499A-9EC4-4CFA07ABACA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECA81395-3E64-499A-9EC4-4CFA07ABACA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6625BADD-624E-489F-92AD-D4F00CC380BC} = {D0AA5E59-7498-4F79-A3FA-B1641DA6467A}
+		{ECA81395-3E64-499A-9EC4-4CFA07ABACA4} = {2900C844-34BD-4CEC-9E7E-08ABA19DD683}
 	EndGlobalSection
 EndGlobal
